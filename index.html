@@ -7,115 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>알바천국앱 리뉴얼</title>
     <script src="https://kit.fontawesome.com/fc6db9a58c.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        :root {
-            --color-main: #f3cc27;
-            --color-sub: #322200;
-            --color-light-grey: #f2f2f2;
-            --color-dark-grey: #444444;
-            --color-black:#141414;
-
-            --font-white: #fefefe;
-
-            --font-small:14px;
-            --font-txt: 18px;
-            --font-tit: 30px;
-
-            --side-padding:20%;
-            --padding-top:100px;
-        }
-        button {
-            border: none;
-        }
-        #event {
-            background: linear-gradient(#a261d5,#d6a0dc);
-            text-align: center;
-            padding: var(--padding-top) 0;
-        }
-        .event_tit {
-            font-size: var(--font-tit);
-            color: var(--font-white);
-        }
-        .event_giftinfo {
-            font-size: var(--font-tit);
-            font-weight: 900;
-            color: var(--font-white);
-        }
-        .highlighter {
-            position: relative;
-        }
-        .highlighter::after {
-            content: '';
-            display: block;
-            background-color: #fb7193;
-            width: 290px;
-            height: 80px;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        .event_date-txt {
-            margin-left: 20px;
-        }
-        .event_giftimg {
-            width: 700px;
-            height: 300px;
-            margin: 0 auto;
-        }
-        .yellow {
-            color: var(--color-main);
-        }
-        .white {
-            color: var(--font-white);
-        }
-        .event_btns-join {
-            width: 300px;
-            height: 90px;
-            background-color: #b758a6;
-            color: var(--font-white);
-            text-align: center;
-            line-height: 90px;
-            font-size: var(--font-tit);
-            font-weight: 700;
-            border-radius: 50px;
-            margin-right: 50px;
-        }
-        .event_btns-share {
-            color: var(--color-dark-grey);
-            background-color: var(--font-white);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="./js/button.js"></script>
+    <script defer src="./js/swiper.js"></script>
 </head>
 
 <body>
     <div id="container">
         <header>
-            <h1 class="logo"><a href="http://www.alba.co.kr/" target="blank"><img src="./images/로고.png" alt="알바천국"></a>
-            </h1>
+            <div class="in">
+                <h1 class="logo"><a href="http://www.alba.co.kr/" target="blank"><img src="./images/logo.png" alt="알바천국"></a>
+                </h1>
+            </div>
         </header>
         <main>
             <section id="visual">
-                <div class="visual_text">
-                    <h2>알바씬의 리더</h2>
-                    <h1>알바천국</h1>
-                    <p>알바 구인구직 포털서비스 알바천국앱에서<br> 새롭게 리뉴얼 된 정보를 확인하세요!</p>
-                    <p class="qr_info">앱 다운로드</p>
-                    <img class="qr" src="./images/앱다운qr.gif" alt="앱다운QR코드">
-                </div>
-                <div class="visual_img">
-                    <img src="./images/리정전소미.png" alt="리정전소미">
+                <div class="in">
+                    <div class="visual_text">
+                        <h2>알바씬의 리더</h2>
+                        <h1>알바천국</h1>
+                        <p>알바 구인구직 포털서비스 알바천국앱에서<br> 새롭게 리뉴얼 된 정보를 확인하세요!</p>
+                        <p class="qr_info">앱 다운로드</p>
+                        <img class="qr" src="./images/app-qr.gif" alt="앱다운QR코드">
+                    </div>
+                    <div class="visual_img">
+                        <img src="./images/model.png" alt="리정전소미">
+                    </div>
                 </div>
             </section>
             <section id="benefit">
-                <ul>
+                <ul class="in">
                     <li class="benefit_list">
                         <div class="benefit_list-icon">
                             <i class="fas fa-male fa-3x"></i>
@@ -130,7 +56,7 @@
                     </li>
                     <li class="benefit_list">
                         <div class="benefit_list-icon">
-                            <img src="./images/알바천국앱.jpg" alt="알바천국앱">
+                            <img src="./images/app.jpg" alt="알바천국앱">
                         </div>
                         <p class="benefit_list-tit">앱 다운로드 누적수</p>
                         <p class="benefit_list-num"><strong>1,000</strong>만</p>
@@ -158,78 +84,82 @@
                 </ul>
             </section>
             <section id="skill">
-                <ul>
-                    <li class="skill_list">
-                        <div class="skill_img">
-                            <img src="./images/급여계산기.png" alt="급여계산기">
+                <div class="in swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        <img src="./images/custom.png" alt="맞춤알바">
+                        <div class="skill_txt">
+                            <p><strong>맞춤알바 설정하기</strong></p>
+                            <p>기존 1개의 맞춤알바 설정에서 3개까지 늘어 났어요</p>
                         </div>
-                        <p class="skill_tit"><strong>급여계산기</strong></p>
-                        <p class="skill_txt">내가 받을 시급을 미리 계산해볼수 있어요</p>
-                    </li>
-                    <li class="skill_list">
-                        <div class="skill_img">
-                            <img src="./images/커뮤니티1.png" alt="알바썰 커뮤니티">
                         </div>
-                        <p class="skill_tit"><strong>알바썰 커뮤니티</strong></p>
-                        <p class="skill_txt">어디선 알수없다 진짜 경험해본 사람들이 알려주는 썰을 들어볼수있어요</p>
-                    </li>
-                    <li class="skill_list">
-                        <div class="skill_img">
-                            <img src="./images/알바맵.png" alt="알바맵">
+                        <div class="swiper-slide">
+                        <img src="./images/simple-apply.png" alt="간편입사지원">
+                        <div class="skill_txt">
+                            <p><strong>간편입사지원</strong></p>
+                            <p>불필요한 정보는 이제그만 입사지원은 1분이면 OK!</p>
                         </div>
-                        <p class="skill_tit"><strong>알바맵</strong></p>
-                        <p class="skill_txt">알바를 많이 구하는 장소를 알수있고 실제 우리집과의 거리도 알려줘요 </p>
-                    </li>
-                    <li class="skill_list">
-                        <div class="skill_img">
-                            <img src="./images/인기검색어.png" alt="인기검색어기능">
                         </div>
-                        <p class="skill_tit"><strong>인기검색어 와 추천검색어</strong></p>
-                        <p class="skill_txt">무슨알바를 해야 될지 모르겠다면? 요즘은 무슨알바가 대세인지 알수있어요</p>
-                    </li>
-                    <li class="skill_list">
-                        <div class="skill_img">
-                            <img src="./images/간편입사지원.png" alt="간편입사지원">
+                        <div class="swiper-slide">
+                        <img src="./images/rank.png" alt="인기검색어기능">
+                        <div class="skill_txt">
+                            <p><strong>인기검색어 와 추천검색어</strong></p>
+                            <p>무슨알바를 해야 될지 모르겠다면? 요즘은 무슨알바가 대세인지 알수있어요</p>
                         </div>
-                        <p class="skill_tit"><strong>간편입사지원</strong></p>
-                        <p class="skill_txt">불필요한 정보는 이제그만 입사지원은 1분이면 OK!</p>
-                    </li>
-                    <li class="skill_list">
-                        <div class="skill_img">
-                            <img src="./images/맞춤알바.png" alt="맞춤알바">
                         </div>
-                        <p class="skill_tit"><strong>맞춤알바 설정하기</strong></p>
-                        <p class="skill_txt">기존 1개의 맞춤알바 설정에서 3개까지 늘어 났어요</p>
-                    </li>
-                </ul>
+                        <div class="swiper-slide">
+                        <img src="./images/albamap.png" alt="알바맵">
+                        <div class="skill_txt">
+                            <p><strong>알바맵</strong></p>
+                            <p>알바를 많이 구하는 장소를 알수있고 실제 우리집과의 거리도 알려줘요</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="./images/community.png" alt="알바썰 커뮤니티">
+                        <div class="skill_txt">
+                            <p><strong>알바썰 커뮤니티</strong></p>
+                            <p>어디선 알수없다 진짜 경험해본 사람들이 알려주는 썰을 들어볼수있어요</p>
+                        </div>
+                        </div>
+                        <div class="swiper-slide">
+                        <img src="./images/money-cal.png" alt="급여계산기">
+                        <div class="skill_txt">
+                            <p><strong>급여계산기</strong></p>
+                            <p>내가 받을 시급을 미리 계산해볼수 있어요</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 <a class="appdown_btn" href="https://play.google.com/store/apps/details?id=kr.co.alba.webappalba.m" target="blank">신규 다운로드 하기</a>
             </section>
             <section id="event">
-                <div>
-                    <p class="event_tit">3월 신규 회원 환영이벤트</p>
-                    <p class="event_giftinfo">달콤한 선물과<br><span class="highlighter">다이슨 에어랩</span> 증정!</p>
-                    <div class="event_date">
-                        <p><span class="bold">모집기간</span><span class="event_date-txt">2022년 3월 한달</span></p>
-                        <p><span class="bold">당첨자 발표</span><span class="event_date-txt">2022년 4월 8일(금)</span></p>
+                    <div class="event_tit">
+                        <p>3월 신규 회원 환영이벤트</p>
+                        <p>X</p>
+                        <p><mark>다이슨 에어랩</mark> 증정!</p>
                     </div>
-                    <div class="event_giftimg">
-                        <img src="./images/상품.png" alt="이벤트 상품">
+                    <div class="event_info">
+                        <p class="event_date"><span class="bold">모집기간</span><span class="event_date-txt">2022년 3월 한달</span><br><span class="bold">당첨자 발표</span><span class="event_date-txt">2022년 4월 8일(금)</p>
+                        <div class="event_howto">
+                            <p class="bold">참여방법</p>
+                            <p class="event_howto-txt">새롭게 리뉴얼된 <span class="yellow">알바천국 앱을 다운</span> 받아주세요!<br> 앱으로 접속 후 하단 <span class="white">참여하기</span> 버튼 누르기</p>
+                        </div>
                     </div>
-                    <div class="event_howto">
-                        <p class="bold">참여방법</p>
-                        <p class="event_howto-txt">새롭게 리뉴얼된 <span class="yellow">알바천국 앱을 다운</span> 받아주세요!<br> 앱으로 접속 후 하단 <span class="white">참여하기</span> 버튼 누르기</p>
+                    <div class="event_info-img">
+                        <img src="./images/gift.png" alt="이벤트 상품">
                     </div>
                     <div class="event_btns">
                         <button class="event_btns-join" type="button">참여하기</button>
                         <button class="event_btns-share"><i class="fas fa-share-alt fa-3x"></i></button>
                     </div>
-                </div>
             </section>
             <section class="event_notice">
-                <p class="bold event_notice-tit">이벤트 주의사항</p>
-                <p>
-                    ·  본 이벤트는 3월 신규가입 회원 한에 운영됩니다.<br>·  개인정보 입력 시, 잘못된 연락처로 인한 불이익은 본인에게 책임이 있습니다.<br>·  이벤트에 참여하시는 분들은 참여와 동시에 개인정보 수집 및 취급에 동의한 것으로 판단되며,관련한 문의 사항은 알바천국 고객센터를 통해 연락 주시기 바랍니다.
-                </p>
+                <div class="in">
+                    <p class="bold event_notice-tit">이벤트 주의사항</p>
+                    <p>
+                        ·  본 이벤트는 3월 신규가입 회원 한에 운영됩니다.<br>·  개인정보 입력 시, 잘못된 연락처로 인한 불이익은 본인에게 책임이 있습니다.<br>·  이벤트에 참여하시는 분들은 참여와 동시에 개인정보 수집 및 취급에 동의한 것으로 판단되며,관련한 문의 사항은 알바천국 고객센터를 통해 연락 주시기 바랍니다.
+                    </p>
+                </div>
             </section>
         </main>
         <footer id="footer">
