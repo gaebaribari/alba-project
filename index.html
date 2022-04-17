@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>알바천국앱 리뉴얼</title>
     <script src="https://kit.fontawesome.com/fc6db9a58c.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +20,7 @@
     <div id="container">
         <header>
             <div class="in">
-                <h1 class="logo"><a href="http://www.alba.co.kr/" target="blank"><img src="./images/logo.png" alt="알바천국"></a>
-                </h1>
+                <a href="http://www.alba.co.kr/" class="logo" target="blank"><img src="./images/logo.png" alt="알바천국"></a>
             </div>
         </header>
         <main>
@@ -41,6 +39,7 @@
                 </div>
             </section>
             <section id="benefit">
+                <h2 class="hidden">benefit</h2>
                 <ul class="in">
                     <li class="benefit_list">
                         <div class="benefit_list-icon">
@@ -84,7 +83,8 @@
                 </ul>
             </section>
             <section id="skill">
-                <div class="in swiper-container">
+                <h2 class="hidden">skill</h2>
+                <div class="in swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                         <img src="./images/custom.png" alt="맞춤알바">
@@ -129,17 +129,19 @@
                         </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
                 <a class="appdown_btn" href="https://play.google.com/store/apps/details?id=kr.co.alba.webappalba.m" target="blank">신규 다운로드 하기</a>
             </section>
             <section id="event">
+                <h2 class="hidden">event</h2>
                     <div class="event_tit">
                         <p>3월 신규 회원 환영이벤트</p>
                         <p>X</p>
                         <p><mark>다이슨 에어랩</mark> 증정!</p>
                     </div>
                     <div class="event_info">
-                        <p class="event_date"><span class="bold">모집기간</span><span class="event_date-txt">2022년 3월 한달</span><br><span class="bold">당첨자 발표</span><span class="event_date-txt">2022년 4월 8일(금)</p>
+                        <p class="event_date"><span class="bold">모집기간</span><span class="event_date-txt">2022년 3월 한달</span><br><span class="bold">당첨자 발표</span><span class="event_date-txt">2022년 4월 8일(금)</span></p>
                         <div class="event_howto">
                             <p class="bold">참여방법</p>
                             <p class="event_howto-txt">새롭게 리뉴얼된 <span class="yellow">알바천국 앱을 다운</span> 받아주세요!<br> 앱으로 접속 후 하단 <span class="white">참여하기</span> 버튼 누르기</p>
@@ -154,6 +156,7 @@
                     </div>
             </section>
             <section class="event_notice">
+                <h2 class="hidden">event notice</h2>
                 <div class="in">
                     <p class="bold event_notice-tit">이벤트 주의사항</p>
                     <p>
@@ -166,5 +169,18 @@
             <p>Copyright © (주)미디어윌네트웍스. All Rights Reserved.</p>
         </footer>
     </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+    });
+    </script>
 </body>
 </html>
